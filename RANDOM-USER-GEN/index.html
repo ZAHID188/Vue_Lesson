@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random user Generator</title>
+</head>
+<body>
+    <div id="app">
+ <!-- we cann't do that as like react   <img src="{{picture}}">-->
+
+ <!-- ALL ABOUT V-BIND -->
+ <img 
+        v-bind:src="picture" 
+        :alt="`${firstName} ${lastName}`" 
+        :class="gender"><!--we don't need that curly braces{{}}-->
+ <!-- Instead of V-bind we can only use : as like in the alt-->
+        <h1>  hello {{firstName}} {{lastName}} </h1>
+        <h2> email :{{email}}</h2>
+        <h2> Gender :{{gender}}</h2>
+        <!-- ALL ABOUT V-ON -->
+        <button 
+        :class="gender"
+        v-on:click="getUser()"
+        >Get Random User</button>
+        
+    </div>
+    
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
