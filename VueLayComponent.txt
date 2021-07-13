@@ -1,0 +1,26 @@
+#three separate areas for 
+
+<template>
+<header>
+     <h1>{{title}} </h1>  ----- using declearative rendering varaiables and expressions
+    </header>
+</template>
+
+<script>
+export default {
+
+                       ----- from here i can add method,data,other components 
+    props:{
+        title:String,
+    },
+}
+</script>
+
+<style scoped>
+header{                   ---- this is for styling 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+</style>
