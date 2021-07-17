@@ -3,30 +3,61 @@
     <!--  using components-->
     <!--  $Header$ came from the  scripts component what have been imported from the src/component/header.vue-->
     <!--  $title$ is a props we made it in the src/component/header.vue file-->
-    <Header title="Task Tracer" /> <!-- remember to use / while using components-->
+    <Header title="Task Tracer" />
+    <Tasks :tasks="tasks1"/>                    <!-- V-bind-->
+    <!-- remember to use / while using components-->
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from "./components/Header.vue"
+import Tasks from "./components/Tasks.vue"
 
 export default {
   name: "App",
   components: {
     Header,
+    Tasks,
+  },
+  data() {
+    return{
+      tasks1:[]
+    }
+  },
+  created(){
+    this.tasks1=[
+      {
+      id:1,
+      text:'Doctors apointment',
+      day:'march 1st 2pm',
+      reminder:'true'
+    },
+    {
+      id:2,
+      text:'teacher apointment',
+      day:'march 1st 2pm',
+      reminder:'true'
+    },
+    {
+      id:1,
+      text:'embassy apointment',
+      day:'march 1st 2pm',
+      reminder:'false'
+    }
+    ]
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .container {
   max-width: 500px;
@@ -60,5 +91,4 @@ body {
   display: block;
   width: 100%;
 }
-
 </style>
